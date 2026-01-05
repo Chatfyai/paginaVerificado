@@ -4,19 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light only">
     <title>Zap Premium - E-mail Verificado</title>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            color-scheme: light only;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            background-color: #f5f8f8 !important;
+        }
+
         body {
             font-family: 'Manrope', sans-serif;
-            background: #f5f8f8;
-            color: #0c1d19;
+            background: #f5f8f8 !important;
+            background-color: #f5f8f8 !important;
+            color: #0c1d19 !important;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -31,7 +41,9 @@
         }
 
         .card {
-            background: white;
+            background: white !important;
+            background-color: #ffffff !important;
+            color: #0c1d19 !important;
             border-radius: 1rem;
             padding: 2rem;
             max-width: 640px;
