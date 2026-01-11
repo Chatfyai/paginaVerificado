@@ -5,11 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light only">
+    <meta name="supported-color-schemes" content="light only">
+    <meta name="theme-color" content="#f5f8f8">
     <title>Zap Premium - E-mail Verificado</title>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
     <style>
+        /* Forçar modo claro em todos os navegadores */
         :root {
-            color-scheme: light only;
+            color-scheme: light only !important;
+            --bg-color: #f5f8f8;
+            --card-bg: #ffffff;
+            --text-primary: #0c1d19;
+            --text-secondary: #4b5563;
+            --text-muted: #9ca3af;
+            --accent: #00856a;
+            --accent-hover: #006d57;
+        }
+
+        /* Prevenir dark mode do sistema */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                color-scheme: light only !important;
+            }
+
+            html,
+            body,
+            main,
+            .card,
+            h1,
+            p,
+            footer,
+            a {
+                color-scheme: light only !important;
+            }
         }
 
         * {
@@ -19,17 +47,19 @@
         }
 
         html {
-            background-color: #f5f8f8 !important;
+            background-color: var(--bg-color) !important;
+            color-scheme: light only !important;
         }
 
         body {
             font-family: 'Manrope', sans-serif;
-            background: #f5f8f8 !important;
-            background-color: #f5f8f8 !important;
-            color: #0c1d19 !important;
+            background: var(--bg-color) !important;
+            background-color: var(--bg-color) !important;
+            color: var(--text-primary) !important;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            -webkit-text-fill-color: var(--text-primary);
         }
 
         main {
@@ -38,12 +68,14 @@
             align-items: center;
             justify-content: center;
             padding: 1rem;
+            background-color: var(--bg-color) !important;
         }
 
         .card {
-            background: white !important;
-            background-color: #ffffff !important;
-            color: #0c1d19 !important;
+            background: var(--card-bg) !important;
+            background-color: var(--card-bg) !important;
+            color: var(--text-primary) !important;
+            -webkit-text-fill-color: var(--text-primary);
             border-radius: 1rem;
             padding: 2rem;
             max-width: 640px;
@@ -59,14 +91,16 @@
         }
 
         h1 {
-            color: #00856a;
+            color: var(--accent) !important;
+            -webkit-text-fill-color: var(--accent);
             font-size: 2.5rem;
             font-weight: 800;
             margin-bottom: 0.75rem;
         }
 
         p {
-            color: #4b5563;
+            color: var(--text-secondary) !important;
+            -webkit-text-fill-color: var(--text-secondary);
             font-size: 1rem;
             line-height: 1.6;
             margin-bottom: 1.5rem;
@@ -76,8 +110,10 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: #00856a;
-            color: white;
+            background: var(--accent) !important;
+            background-color: var(--accent) !important;
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff;
             padding: 0.75rem 2rem;
             border-radius: 0.5rem;
             text-decoration: none;
@@ -86,19 +122,23 @@
         }
 
         .btn:hover {
-            background: #006d57;
+            background: var(--accent-hover) !important;
+            background-color: var(--accent-hover) !important;
         }
 
         .btn svg {
             width: 20px;
             height: 20px;
+            fill: #ffffff !important;
         }
 
         footer {
             text-align: center;
             padding: 1.5rem;
-            color: #9ca3af;
+            color: var(--text-muted) !important;
+            -webkit-text-fill-color: var(--text-muted);
             font-size: 0.875rem;
+            background-color: var(--bg-color) !important;
         }
     </style>
 </head>
